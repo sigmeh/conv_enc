@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #	Commands are formulated as $ e e filename
-#							or $ e d filename
-#							to encrypt/decrypt
+#					or $ e d filename
+#					to encrypt/decrypt
 import sys,os,getpass,random,subprocess,math,json
 def sub_zero(sub_num):
 	sub_zero = list('0123456789')	
@@ -90,9 +90,9 @@ def main():
 		ask_cont(file+'e'+s_chain)	
 		subprocess.Popen(['cp '+file+'e'+s_chain+' '+file+'; rm '+file+'e'+s_chain],shell=True)		
 		if action == 'd':
-			subprocess.Popen(['open -a textedit '+file],shell=True)
+			subprocess.Popen(['open -a textedit '+file],shell=True)	#change file-opening app here
 	except:
-			print 'Something went wrong. Exiting...';sys.exit()
+		print 'Something went wrong. Exiting...';sys.exit()
 		
 if __name__ == '__main__':
 	main()
