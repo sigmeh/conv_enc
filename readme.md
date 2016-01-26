@@ -24,7 +24,7 @@ The script prompts for a password.
 
 The document is encrypted/decrypted and saved (temporarily). 
 
-The option to continue allows replacement of the original file with the new file, deleting the "temporary" new file,
+The option to continue allows replacement of the original file with the new file, deleting the "temporary" new file
 (and effectively removing the original file).
 
 If aborting the process, the name of the newly created file is displayed. Neither file is deleted. 
