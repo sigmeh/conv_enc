@@ -1,4 +1,4 @@
-`e.py` is a stripped-down python sub/perm network encryptor invoked with a single command. 
+`e.py` is a stripped-down python (2.7) sub/perm network encryptor invoked with a single command. 
 
 A bash function `e` calls the script. The following is placed in .bashrc (if e.py is located in the home directory):
 
@@ -20,6 +20,10 @@ The first `e` invokes the bash function and calls the python script.
 
 The second character ('e' or 'd') facilitates encryption or decryption, respectively. 
 
+Without the bash function, the script is run as:
+	
+	$ python e.py e filename
+
 The script prompts for a password. 
 
 The document is encrypted/decrypted and saved (temporarily). 
@@ -27,4 +31,4 @@ The document is encrypted/decrypted and saved (temporarily).
 The option to continue allows replacement of the original file with the new file, deleting the "temporary" new file
 (and effectively removing the original file).
 
-If aborting the process, the name of the newly created file is displayed. Neither file is deleted. 
+If aborting the process, the name of the newly created file is displayed, and neither file is deleted. 
