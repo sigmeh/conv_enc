@@ -18,7 +18,7 @@ def sub_doc(doc,sub,pw,pw_num,action):#generate substituted doc based on sub lis
 	sub = [int(sub[i:i+3]) for i in range(len(sub)) if len(sub[i:i+3])==3]	#generate list of 3-digit numbers by slicing sub11	
 	doc = ''.join([unichr(ord(doc[i])^sub[i%len(sub)]) for i in range(len(doc))])
 	return doc
-def perm_doc(doc,perm,pw,pw_num,edq):		#generate permuted doc based on perm list
+def perm_doc(doc,perm,pw,pw_num,action):		#generate permuted doc based on perm list
 	if perm == 'p1':
 		set_size = len(doc)/100; num_set_sizes = 1; bs = 100
 	elif perm == 'p2':
@@ -32,11 +32,11 @@ def perm_doc(doc,perm,pw,pw_num,edq):		#generate permuted doc based on perm list
 		if digit not in map:						#add unique values to map
 			map.append(digit)
 		n+=iter
-	if edq == 'e':
+	if action == 'e':
 		for i in range(num_set_sizes):		
 			for j in range(len(map)):
 				new_doc += doc[i*set_size+map[j]*bs:i*set_size+map[j]*bs+bs]
-	elif edq == 'd':
+	elif action == 'd':
 		new_set = ['']*set_size			
 		for i in range(num_set_sizes):
 			for j in range(len(map)):
