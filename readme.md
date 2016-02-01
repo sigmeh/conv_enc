@@ -2,9 +2,7 @@
 
 A bash function `e` calls the script. The following is placed in .bashrc (if conv_enc.py is located in the home directory):
 
-e () {
-	python $HOME/conv_enc.py $@
-}
+	e () {python $HOME/conv_enc.py $@}
 
 conv_enc.py takes two and only two arguments: action and filename. 
 
