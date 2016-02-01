@@ -1,12 +1,12 @@
-`e.py` is a stripped-down python (2.7) sub/perm network encryptor invoked with a single command. 
+`conv_enc.py` is a stripped-down python (2.7) sub/perm network encryptor invoked with a single command. 
 
-A bash function `e` calls the script. The following is placed in .bashrc (if e.py is located in the home directory):
+A bash function `e` calls the script. The following is placed in .bashrc (if conv_enc.py is located in the home directory):
 
 e () {
-	python $HOME/e.py $@
+	python $HOME/conv_enc.py $@
 }
 
-e.py takes two and only two arguments: action and filename. 
+conv_enc.py takes two and only two arguments: action and filename. 
 
 A properly formulated invocation is as follows:
 
@@ -20,15 +20,16 @@ The first `e` invokes the bash function and calls the python script.
 
 The second character ('e' or 'd') facilitates encryption or decryption, respectively. 
 
-Without the bash function, the script is run as:
+Without the bash function, the script is run from its location as:
 	
-	$ python e.py e filename
+	$ python conv_enc.py e filename
 
 The script prompts for a password. 
 
-The document is encrypted/decrypted and saved (temporarily). 
+For encryption, file contents are serialized, encrypted, and saved as a dictionary whose key is the file name. 
+The original file name and extension are thus encoded into the file, and will facilitate opening the file with the appropriate program at a later date. 
 
-The option to continue allows replacement of the original file with the new file, deleting the "temporary" new file
-(and effectively removing the original file).
+For decryption, the reverse sub/perm network is executed, resulting in a json-encoded document that will be opened from a 
+subprocess call in the default application for opening files of that type. Without an extension on the original file, that file may not be opened properly. 
 
-If aborting the process, the name of the newly created file is displayed, and neither file is deleted. 
+After opening the decrypted file, the shell process waits for a command to remove the new file (or not). 
