@@ -96,7 +96,7 @@ def main():
 		open_file = ''
 		while open_file not in list('ynq'):	#ask to open file
 			open_file = raw_input('Open decrypted file? (y n q): ')
-		if open_file == 'q': quit()	
+		if open_file == 'q': quit() 	
 		if open_file == 'y':
 		#if open_file in list('nq'): quit()
 			show_file=subprocess.Popen(['open '+s_chain+filename],stdout=subprocess.PIPE,shell=True)	#open file

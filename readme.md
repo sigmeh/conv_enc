@@ -24,7 +24,7 @@ Without the bash function, the script is run from its location as:
 	
 	$ python conv_enc.py e filename
 
-The script prompts for a password. 
+The script prompts for a password.   
 
 For encryption, file contents are serialized, encrypted, and saved as a dictionary whose key is the file name. 
 The original file name and extension are thus encoded into the file, and will facilitate opening the file with the appropriate program at a later date. 
